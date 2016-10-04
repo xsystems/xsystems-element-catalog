@@ -88,7 +88,8 @@
                 </app-toolbar>
               </app-header>
               <xsystems-element-catalog elements="[[elements]]"
-                                        selected="{{element}}">
+                                        selected="{{element}}"
+                                        base="[[base]]">
               </xsystems-element-catalog>
             </app-header-layout>
           </div>
@@ -107,7 +108,17 @@
               elements: {
                 type: Array,
                 value: function() {
-                  return ['xsystems-bower', 'app-layout', 'iron-component-page', 'iron-doc-viewer'];
+                  return ['xsystems-bower', 'app-layout', 'iron-doc-viewer'];
+                }
+              },
+              base: {
+                type: String,
+                value: function() {
+                  if (location.hostname == 'localhost') {
+                    return location.protocol + "//" + location.host + '/bower_components/';
+                  } else {
+                    return location.protocol + "//" + location.host + '/xsystems-element-catalog/bower_components/';
+                  }
                 }
               },
               demo: {
