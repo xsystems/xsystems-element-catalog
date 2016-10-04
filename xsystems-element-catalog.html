@@ -32,7 +32,10 @@ Catalog to browse a collection of elements
       }
     </style>
 
-    <xsystems-bower packages="[[elements]]" packages-json="{{packagesJson}}"></xsystems-bower>
+    <xsystems-bower packages="[[elements]]"
+                    packages-json="{{packagesJson}}"
+                    base="[[base]]">
+    </xsystems-bower>
 
     <neon-animated-pages  selected="[[_selectPage(elements, selected)]]"
                           attr-for-selected="data-page"
